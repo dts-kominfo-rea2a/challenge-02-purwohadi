@@ -51,11 +51,23 @@ function lakukanLooping(arrPegawai) {
 	let komentar = null;
 
 	/**Start here */
-	dataYangAkanDilooping.find((o, i) => {
-		hasilLooping.push(o.namaDepan+" "+o.namaBelakang)
-		if (o.jenisKelamin === 'M') jumlahPria ++
-		if (o.jenisKelamin === 'F') jumlahWanita ++
-	})
+	// dataYangAkanDilooping.find((o, i) => {
+	// 	hasilLooping.push(o.namaDepan+" "+o.namaBelakang)
+	// 	if (o.jenisKelamin === 'M') jumlahPria ++
+	// 	if (o.jenisKelamin === 'F') jumlahWanita ++
+	// })
+
+	// dataYangAkanDilooping.forEach(function (o, index){
+	// 	hasilLooping.push(o.namaDepan+" "+o.namaBelakang)
+	// 	if (o.jenisKelamin === 'M') jumlahPria ++
+	// 	if (o.jenisKelamin === 'F') jumlahWanita ++
+	// })
+
+	for(let i=0;i<dataYangAkanDilooping.length;i++){    
+		hasilLooping.push(dataYangAkanDilooping[i]['namaDepan']+" "+dataYangAkanDilooping[i]['namaBelakang']);
+		if (dataYangAkanDilooping[i]['jenisKelamin'] === 'F') jumlahWanita ++
+		if (dataYangAkanDilooping[i]['jenisKelamin'] === 'M') jumlahPria ++
+	}
 	
 	if(jumlahPria > jumlahWanita)
 	{
